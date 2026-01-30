@@ -1,0 +1,26 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: light; }
+.dark { color-scheme: dark; }
+
+html, body { height: 100%; }
+
+/* Reusable tokens */
+.card { @apply rounded-3xl border border-white/20 bg-white/80 backdrop-blur shadow-soft dark:bg-neutral-900/70 dark:border-white/10; }
+/* === Contrast patch for light theme badges === */
+.badge { @apply inline-flex items-center justify-center px-4 py-2 rounded-full bg-white/90 ring-1 ring-brand-300 text-brand-700 shadow-sm dark:bg-neutral-900/60 dark:text-brand-200 dark:ring-white/10; }
+.container-wide { @apply max-w-6xl mx-auto px-4; }
+
+/* Fancy link underline */
+.link { @apply relative; }
+.link::after { content: ""; @apply absolute left-0 -bottom-1 h-0.5 w-0 bg-brand-500 transition-all; }
+.link:hover::after { @apply w-full; }
+
+/* Gradient helpers */
+.gradient-text { @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-500 to-purple-500; }
+
+/* Smooth transitions */
+* { @apply transition-colors duration-200; }
